@@ -1,9 +1,10 @@
 import React from 'react'
 import { ScrollView, StatusBar, View } from 'react-native'
 import Country from '../components/ChoosCountries/Country'
+import { useLocalSearchParams } from 'expo-router'
 
-let Countries = [
-  {"id":1, "uri": require("../assets/images/ico/countries_flags/Montenegro.png"), "name":"Албания", "link": "albania"},
+let countries = [
+  {"id":1, "uri": require("../assets/images/ico/countries_flags/Albania.png"), "name":"Албания", "link": "albania"},
   {"id":2, "uri": require("../assets/images/ico/countries_flags/Bulgaria.png"), "name":"Болгария", "link": "bolgria"},
   {"id":3, "uri": require("../assets/images/ico/countries_flags/Bosnia.png"), "name":"Босния", "link": "bosnia"},
   {"id":4, "uri": require("../assets/images/ico/countries_flags/Hungary.png"), "name":"Венгрия", "link": "vengria"},
@@ -20,11 +21,13 @@ let Countries = [
   {"id":15, "uri": require("../assets/images/ico/countries_flags/Finland.png"), "name":"Финляндия", "link": "fnld"},
   {"id":16, "uri": require("../assets/images/ico/countries_flags/France.png"), "name":"Франция", "link": "frnc"},
   {"id":17, "uri": require("../assets/images/ico/countries_flags/Croatia.png"), "name":"Хорватия", "link": "hrvt"},
-  {"id":18, "uri": require("../assets/images/ico/countries_flags/Montenegro-1.png"), "name":"Черногория", "link": "chrngr"},
+  {"id":18, "uri": require("../assets/images/ico/countries_flags/Montenegro.png"), "name":"Черногория", "link": "chrngr"},
   {"id":19, "uri": require("../assets/images/ico/countries_flags/Switzerland.png"), "name":"Швейцария", "link": "shvcr"}
 ]
 
 const ChoosCountries = () => {
+
+
   return (
     <View style={{paddingTop: 20, height: '100%', width: '100%'}}>
       {/* <Header/> */}
@@ -33,12 +36,12 @@ const ChoosCountries = () => {
             
             {/* <StatusBar style="auto" /> */}
             
-            {Countries.map(cb => <Country
+            {countries.map(cb => <Country
               id={cb.id}
               key={cb.id}
               ico={cb.uri}
               name={cb.name}
-              link={'/info'}
+              link={cb.link}
             />)}
         <StatusBar theme="auto"/>
         </ScrollView>

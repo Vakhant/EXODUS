@@ -2,17 +2,17 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Image, Pressable, View, useColorScheme, Text } from 'react-native';
 import Colors from '../../constants/Colors';
-import InfoSvg from '../../components/SVGs/InfoSvg';
-import LikedSvg from '../../components/SVGs/LikedSvg';
-import MoreSvg from '../../components/SVGs/MoreSvg';
-import RecsSvg from '../../components/SVGs/RecsSvg';
+import InfoSvg from '../../assets/images/ico/main_nav/InfoSvg';
+import LikedSvg from '../../assets/images/ico/main_nav/LikedSvg';
+import MoreSvg from '../../assets/images/ico/main_nav/MoreSvg';
+import RecsSvg from '../../assets/images/ico/main_nav/RecsSvg';
+import Header from '../../components/ChoosCountries/Header';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
   return (
     <Tabs
       screenOptions={{
-        // header: ()=>null,
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         tabBarStyle: {backgroundColor: 'rgba(0,0,0,0)', borderTopWidth: 0, boxShadow: 'none'}
       }}>
@@ -23,6 +23,7 @@ export default function TabLayout() {
           tabBarLabelStyle: {
             display: 'none'
           },
+          header: ({})=> <Header />,
           tabBarIcon: ({focused}) => 
           <View style={{
               width: '100%',

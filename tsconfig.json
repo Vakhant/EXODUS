@@ -8,5 +8,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "components/SVGs/InfoSvg.jsx", "components/BtnBlueStartPage.jsx", "components/BtnBlueStartPage.jsx", "app/choosCountries.jsx"  ]
+, "assets/images/ico/main_nav/InfoSvg.jsx", "components/BtnBlueStartPage.jsx", "components/BtnBlueStartPage.jsx", "app/choosCountries.jsx"  ]
 }

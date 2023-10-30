@@ -2,10 +2,11 @@ import React from 'react'
 import CountryInfoSection from '../components/CountryInfoSections/CountryInfoSection'
 import { View } from 'react-native'
 
-const CountryInfoSections = () => {
+
+const CountryInfoSections = ({countries}) => {
   return (
     <View>
-        <CountryInfoSection/>
+      {countries.map(c=><CountryInfoSection id={c.id} key={c.skey} sectionName={c.name} countries={c.li}/>)}
     </View>
   )
 }
