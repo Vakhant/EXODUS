@@ -6,6 +6,7 @@ import * as Font from 'expo-font';
 import { useEffect, useState, useCallback } from 'react';
 import { Text, View } from 'react-native';
 import BtnBlueStartPage from '../components/BtnBlueStartPage';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -18,7 +19,10 @@ export default function App() {
       try {
         // Pre-load fonts, make any API calls you need to do here
         await Font.loadAsync({
-            'Gilroy': require('../assets/fonts/Gilroy-Medium.ttf')
+            'Gilroy': require('../assets/fonts/Gilroy-Medium.ttf'),
+            'Manrope-Medium': require('../assets/fonts/Manrope-Medium.ttf'),
+            'Manrope-Regular': require('../assets/fonts/Manrope-Regular.ttf'),
+            'Manrope-SemiBold': require('../assets/fonts/Manrope-SemiBold.ttf'),
         })
         // Artificially delay for two seconds to simulate a slow loading
         // experience. Please remove this if you copy and paste the code!
@@ -90,8 +94,9 @@ export default function App() {
     );
   } else {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} onLayout={onLayoutRootView}>
-      <Image style={{ marginTop: 65}} source={require('../assets/images/logo.png')} />
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(255,255,255,1)' }} onLayout={onLayoutRootView}>
+      <SafeAreaView style={{backgroundColor: '#fff'}}/> 
+      <Image style={{ marginTop: 40}} source={require('../assets/images/logo.png')} />
       <Image style={{maxWidth: '90%', width: '100%', marginTop: 35}} source={require('../assets/images/countriesChoosLogo.png')} />
       <Text style={styles.text}>Проверенная информация о странах и поиск качественных услуг за границей</Text>
       
@@ -108,6 +113,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontFamily: 'Gilroy',
       fontSize: 18,
-      color: '#5379F6'
+      color: '#5379F6',
+      marginTop: 8
   }
 });

@@ -1,20 +1,23 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import { Image, Pressable, View, useColorScheme, Text } from 'react-native';
-import Colors from '../../constants/Colors';
+import { Image, Pressable, View, Text } from 'react-native';
 import InfoSvg from '../../assets/images/ico/main_nav/InfoSvg';
 import LikedSvg from '../../assets/images/ico/main_nav/LikedSvg';
 import MoreSvg from '../../assets/images/ico/main_nav/MoreSvg';
 import RecsSvg from '../../assets/images/ico/main_nav/RecsSvg';
-import Header from '../../components/ChoosCountries/Header';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        tabBarStyle: {backgroundColor: 'rgba(0,0,0,0)', borderTopWidth: 0, boxShadow: 'none'}
+        headerShown: false,
+        tabBarActiveTintColor: '#2f95dc', headerShadowVisible:true,
+        tabBarStyle: {backgroundColor: 'rgba(255,255,255,1)', borderTopWidth: 0, boxShadow: 'none',
+        height:56, 
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        opacity: 1
+      }
       }}>
       <Tabs.Screen
         name="info"
@@ -23,33 +26,18 @@ export default function TabLayout() {
           tabBarLabelStyle: {
             display: 'none'
           },
-          header: ({})=> <Header />,
           tabBarIcon: ({focused}) => 
           <View style={{
               width: '100%',
               height: 56,
-              backgroundColor: '#3ea3c5',
+              backgroundColor: '#fff',
               borderTopLeftRadius: 20,
               alignItems: 'center',
               justifyContent: 'center'
             }}>
             <InfoSvg chsn={focused}/>
-            <Text style={{fontSize: 11}}>Информация</Text>
-          </View>,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
+            <Text style={{fontSize: 11, color: focused? '#1374F3':'#5A6B8B'}}>Информация</Text>
+          </View>
         }}
       />
       <Tabs.Screen
@@ -63,12 +51,12 @@ export default function TabLayout() {
           <View style={{
               width: '100%',
               height: 56,
-              backgroundColor: '#3ea3c5',
+              backgroundColor: '#fff',
               justifyContent: 'center',
               alignItems: 'center'
             }}>
             <RecsSvg chsn={focused}/>
-            <Text style={{fontSize: 11}}>Рекомендации</Text>
+            <Text style={{fontSize: 11, color: focused? '#1374F3':'#5A6B8B'}}>Рекомендации</Text>
           </View>,
         }}
       />
@@ -83,12 +71,12 @@ export default function TabLayout() {
           <View style={{
               width: '100%',
               height: 56,
-              backgroundColor: '#3ea3c5',
+              backgroundColor: '#fff',
               justifyContent: 'center',
               alignItems: 'center'
             }}>
             <LikedSvg chsn={focused}/>
-            <Text style={{fontSize: 11}}>Избранное</Text>
+            <Text style={{fontSize: 11, color: focused? '#1374F3':'#5A6B8B'}}>Избранное</Text>
           </View>,
         }}
       />
@@ -103,13 +91,13 @@ export default function TabLayout() {
           <View style={{
               width: '100%',
               height: 56,
-              backgroundColor: '#3ea3c5',
+              backgroundColor: '#fff',
               alignItems: 'center',
               justifyContent: 'center',
               borderTopRightRadius: 20,
             }}>
             <MoreSvg chsn={focused}/>
-            <Text style={{fontSize: 11}}>Еще</Text>
+            <Text style={{fontSize: 11, color: focused? '#1374F3':'#5A6B8B'}}>Еще</Text>
           </View>,
         }}
       />

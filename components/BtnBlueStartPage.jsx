@@ -15,7 +15,7 @@ const BtnBlueStartPage = ({link='/two', text='Выберите страну'}) =
         backgroundColor: focused?'#5379F6':'#E8EBF9',
         justifyContent: 'center',
         alignItems: 'center'}}>
-                    <Text style={{color: focused?'#ffffff':'#1374F3'}}>{text}</Text>
+                    <Text style={{color: focused?'#ffffff':'#1374F3', fontFamily: 'Manrope-Medium', fontSize: 18}}>{text}</Text>
                 </View>
             </Pressable>
         </Link>

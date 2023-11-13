@@ -1,30 +1,35 @@
 import React from 'react'
-import { Image, Pressable, Text, View } from 'react-native'
+import { Image, Text } from 'react-native'
 import { Link } from 'expo-router'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { actions as infoActions}  from '../../store/reducers/info-reducer'
 
-const Country = ({ico, link, name}) => {
+const  Country = ({id, ico, name}) => {
     const [focused, setFocused] = useState(true)
 
+    const dispatch = useDispatch()
+
+    const setCounrie = (chosenCountrieId) => {
+        console.log(chosenCountrieId);
+      dispatch(infoActions.setChosenCountrieAC(chosenCountrieId))
+    }
+        
     return (
             <Link style={{
-                    width: '100%', 
-                    paddingLeft: '20%', 
+                    width: '90%',
+                    paddingLeft: 52,
+                    marginLeft: '5%',
                     height: 48, 
-                    marginBottom: 8, 
-                    backgroundColor: focused?'rgba(0,0,0,0)':'#E8EBF9'
+                    marginTop: 8, 
+                    backgroundColor: focused?'rgba(0,0,0,0)':'#E8EBF9',
+                    borderRadius: 20
                 }}
                 href={{
                     pathname: "/info",
-                    // /* 1. Navigate to the details route with query params */
-                    params: {
-                        link: link,
-                        ico: ico,
-                        name: name
-                    },
-                }} onPressIn={()=>setFocused(false)} onPressOut={()=>setFocused(true)}>
+                }} onPress={()=>{setCounrie(id);}} onPressIn={()=>{setFocused(false)}} onPressOut={()=>setFocused(true)}>
                 
-                <Text style={{fontSize: 18}}><Image style={{width: 32, height: 32, resizeMode: 'contain'}} source={ico} /> {name}</Text>
+                <Text style={{fontSize: 16, fontFamily:'Manrope-Regular'}}><Image style={{width: 32, height: 32, resizeMode: 'contain'}} source={ico} />    {name}</Text>
           </Link>
       )
 }

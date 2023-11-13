@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Text, View } from 'react-native';
 
-import EditScreenInfo from '../../components/EditScreenInfo';
-
-export default function TabMoreScreen() {
+export default function TabRecsScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab More</Text>
-      <View style={styles.separator} />
+      <Text style={styles.title}>Tab Recs Screen</Text>
+      <View style={styles.separator}/>
     </View>
   );
 }
@@ -16,6 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#fff'
   },
   title: {
     fontSize: 20,

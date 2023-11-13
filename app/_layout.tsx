@@ -1,7 +1,9 @@
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
-import Header from '../components/ChoosCountries/Header';
+import Header from '../components/Header';
+import { Provider } from 'react-redux';
+import store from './../store/redux-store';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -38,14 +40,12 @@ export default function RootLayout() {
 function RootLayoutNav() {
 
   return (
+    <Provider store={store}>
       <Stack>
         <Stack.Screen name="index"  options={{ headerShown: false }}/>
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-        <Stack.Screen name="choosCountries" options={{ presentation: 'modal',
-          header: ({})=> <Header />,
-          }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false
-        }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="choosCountries" options={{ header:()=><Header pageName='choosCountries'/>}}/>
       </Stack>
+    </Provider>
   );
 }

@@ -28,27 +28,36 @@ function InfoBlockSVG ({sbkey=''}) {
     let innerIcon = <></>
 
     switch (sbkey) {
-      case "t-kd": innerIcon = <InfoIcon/>; break;
-      case "t-vr": innerIcon = <InfoIcon1/>; break;
-      case "t-g": innerIcon = <InfoIcon2/>; break;
-      case "l-iv": innerIcon = <InfoIcon3/>; break;
-      case "l-VNJ": innerIcon = <InfoIcon4/>; break;
-      case "f-os": innerIcon = <InfoIcon5/>; break;
-      case "f-ov": innerIcon = <InfoIcon6/>; break;
-      case "f-t": innerIcon = <InfoIcon7/>; break;
-      case "n-oi": innerIcon = <InfoIcon8/>; break;
-      case "m-oi": innerIcon = <InfoIcon9/>; break;
-      case "m-ms": innerIcon = <InfoIcon10/>; break;
-      case "o-d": innerIcon = <InfoIcon11/>; break;
-      case "o-sh": innerIcon = <InfoIcon12/>; break;
-      case "o-ku": innerIcon = <InfoIcon13/>; break;
-      case "o-ks": innerIcon = <InfoIcon14/>; break;
-      case "i-o": innerIcon = <InfoIcon15/>; break;
-      case "i-p": innerIcon = <InfoIcon16/>; break;
-      case "t-ot": innerIcon = <InfoIcon17/>; break;
-      case "t-la": innerIcon = <InfoIcon18/>; break;
-      case "j-pp": innerIcon = <InfoIcon19/>; break;
-      case "j-r": innerIcon = <InfoIcon20/>; break;
+      //туризм
+      case "t-kd": innerIcon = <InfoIcon20/>; break;
+      case "t-vr": innerIcon = <InfoIcon19/>; break;
+      case "t-g": innerIcon = <InfoIcon18/>; break;
+      //легализация
+      case "l-iv": innerIcon = <InfoIcon1/>; break;
+      case "l-VNJ": innerIcon = <InfoIcon/>; break;
+      //финансы
+      case "f-os": innerIcon = <InfoIcon4/>; break;
+      case "f-ov": innerIcon = <InfoIcon3/>; break;
+      case "f-t": innerIcon = <InfoIcon2/>; break;
+      //неджвижимость
+      case "n-oi": innerIcon = <InfoIcon5/>; break;
+      //медицина
+      case "m-oi": innerIcon = <InfoIcon7/>; break;
+      case "m-ms": innerIcon = <InfoIcon6/>; break;
+      //образование
+      case "o-d": innerIcon = <InfoIcon11/>; break; //?
+      case "o-sh": innerIcon = <InfoIcon10/>; break;
+      case "o-ku": innerIcon = <InfoIcon9/>; break;
+      case "o-ks": innerIcon = <InfoIcon8/>; break;
+      //связь и интернет
+      case "si-o": innerIcon = <InfoIcon13/>; break;
+      case "si-p": innerIcon = <InfoIcon12/>; break;
+      //транспорт
+      case "t-ot": innerIcon = <InfoIcon14/>; break;
+      case "t-la": innerIcon = <InfoIcon15/>; break;
+      //животные
+      case "j-pp": innerIcon = <InfoIcon16/>; break;
+      case "j-r": innerIcon = <InfoIcon17/>; break;
       default: break;
     }
 
