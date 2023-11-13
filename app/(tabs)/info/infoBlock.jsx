@@ -4,7 +4,7 @@ import Header from '../../../components/Header';
 import { Link } from 'expo-router';
 import { useSelector } from 'react-redux';
 import { getChosenInformation, getInformationBlock } from '../../../store/reducers/info-selectors';
-import Markdown, { getUniqueID } from 'react-native-markdown-display';
+import Markdown, {getUniqueID} from '@ronradtke/react-native-markdown-display';
 
 const renderers = {
   //This custom renderer changes how images are rendered
